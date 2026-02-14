@@ -14,3 +14,5 @@ def get_next_user_id() -> int:
     current_id = user_id_counter
     user_id_counter += 1
     return current_id
+
+
