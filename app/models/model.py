@@ -21,8 +21,8 @@ class User:
 class Course:
     def __init__(self, id:int, title:str, code:str):
         self.id = id
-        self.title = str
-        self.code = str
+        self.title = title
+        self.code = code
 
     def to_dict(self):
         return {
@@ -34,9 +34,9 @@ class Course:
 
 class Enrollment:
     def __init__(self, id:int, user_id:int, course_id:int):
-        self.id = int
-        self.user_id = int 
-        self.course_id = int   
+        self.id = id
+        self.user_id = user_id
+        self.course_id = course_id
 
 
     def to_dict(self):

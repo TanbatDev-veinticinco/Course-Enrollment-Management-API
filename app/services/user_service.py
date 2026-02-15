@@ -4,47 +4,21 @@ from app.storage import database
 
 
 
-# def create_user(name: str, email: str, role: str) -> User:
-#     for user in database.users:
-#         if user.email == email:
-#             raise HTTPException(
-#                 status_code=400,
-#                 detail= "Email already exists"
-#             )
-        
-#         user_id = database.get_next_user_id()
-
-#         new_user = User(id=user_id, name=name, email=email, role=role)
-
-#         database.users.append(new_user)
-        
-#         return new_user
-
 def create_user(name: str, email: str, role: str) -> User:
-
-    # Check if email already exists
     for user in database.users:
         if user.email == email:
             raise HTTPException(
                 status_code=400,
-                detail="Email already exists"
+                detail= "Email already exists"
             )
-
-    # Create user AFTER loop finishes
+        
     user_id = database.get_next_user_id()
 
-    new_user = User(
-        id=user_id,
-        name=name,
-        email=email,
-        role=role
-    )
+    new_user = User(id=user_id, name=name, email=email, role=role)
 
     database.users.append(new_user)
-
+    
     return new_user
-
-
 
 
 def get_all_user() -> list[User]:
