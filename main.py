@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes import user, course
+from app.api.v1 import user, course, enrollment
 
 
 app = FastAPI(
@@ -9,6 +9,8 @@ app = FastAPI(
 
 app.include_router(user.router)
 app.include_router(course.router)
+app.include_router(enrollment.router)
+
 
 @app.get("/")
 def read_root():
