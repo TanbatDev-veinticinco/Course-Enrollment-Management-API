@@ -61,9 +61,10 @@ def update_course(course_id: int, course: CourseUpdate, role: str):
 def delete_course(course_id: int, role: str):
     if role != "admin":
         raise HTTPException(
-            status_code= 403,
-            detail= "Only admin can update courses"
+            status_code=403,
+            detail="Only admin can update courses"
         )
-    
+
     course_service.delete_course(course_id)
     return None
+    
