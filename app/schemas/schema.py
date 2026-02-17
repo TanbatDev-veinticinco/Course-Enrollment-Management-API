@@ -35,7 +35,7 @@ class CourseResponse(BaseModel):
 
 class EnrollmentCreate(BaseModel):
     user_id: int
-    course_id: str
+    course_id: int
     role: Literal["student", "admin"]
 
 
